@@ -19,6 +19,13 @@ $(document).ready(function(){
                     
                 
                 }
+                else if((userInputs.length === 1) && (consonants.includes(userInputs[0]))){
+                    result.push(userInputs + "ay")
+
+
+
+
+                }
                 else {
                     console.log("not single vowel");
                     
