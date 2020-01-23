@@ -19,7 +19,7 @@ The program adds "way" to multiple character words beginning with a vowel.
 * input: apple
 * output: appleway
 
-For words beginning with "y", the program will treat "y" as a constant.
+For words beginning with "y", the program will treat "y" as a consant.
 * input: yelp
 * output: elpyay
 
