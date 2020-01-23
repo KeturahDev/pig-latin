@@ -6,48 +6,46 @@ $(document).ready(function(){
     $("#user-Form").submit(function(event){
         let result = []
         event.preventDefault();
-        var userInputs = $("input#user-text").val().split("")
-        console.log(userInputs);
+        var userEntry = $("input#user-text").val()
+        var userInputs = userEntry.split("")
         userInputs.forEach(function(userInput){
             
             if(letters.includes(userInput)){
-                console.log(userInput);
                 
-                if  ((userInputs.length === 1) && (vowels.includes(userInputs[0]))) {
-                    result.push(userInputs + "ay")
-
-                    
+                console.log("is letter");
                 
-                }
-                else if((userInputs.length === 1) && (consonants.includes(userInputs[0]))){
-                    result.push(userInputs + "ay")
-
-
-
-
-                }
-                else {
-                    console.log("not single vowel");
-                    
-                }
-
-
-
-
-
-
-
-
-
-
-
-
+  
+                
             }
             else{
                 result.push("please do not enter a number");
                 
             }
         });
+        if  ((userInputs.length >= 1) && (vowels.includes(userInputs[0]))) {
+            console.log(userInputs);
+            
+            result.push(test)
+            console.log(result);
+            
+            result.push("ay")
+            console.log("test1");
+            
+            
+        
+        }
+        else if((userInputs.length === 1) && (consonants.includes(userInputs[0]))){
+            result.concat(userInputs)
+            result.push("ay")
+        
+            
+
+
+        }
+        else {
+            console.log("not single vowel");
+            
+        }
         console.log(result);
         
     })
