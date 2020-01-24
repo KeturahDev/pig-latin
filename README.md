@@ -7,7 +7,7 @@ The program will recognize vowels and consonants regardless of capitolization.
 * input: ApplE
 * output: ApplE
 
-The program adds "ay" to single-letter words beginning with a vowel.
+The program adds "way" to single-letter words beginning with a vowel.
 * input: i
 * output: iay
 

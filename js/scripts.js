@@ -4,39 +4,48 @@ $(document).ready(function(){
   let letters = vowels.concat(consonants)
   
   $("#user-Form").submit(function(event){
-    let result = []
     event.preventDefault();
-    var userEntry = $("input#user-text").val()
-    var userInputs = userEntry.split("")
-      userInputs.forEach(function(userInput){
-          
-        if(letters.includes(userInput)){
-            
-            console.log("is letter");    
-        }
-        else{
-            result.push("please do not enter a number");    
-        }
-      });
-        if  ((userInputs.length >= 1) && (vowels.includes(userInputs[0]))) {
-        console.log(userInputs);
-        
-        result.push(userEntry)
-        console.log(result);
-        result.join(" ");
 
-        
-        result.push("ay")
-        console.log("test1");
-        }
-        else if((userInputs.length === 1) && (consonants.includes(userInputs[0]))){
-            result.concat(userInputs)
-            result.push("ay")
-        }
-        else {
-            console.log("not single vowel");  
-        }
-        console.log(result);
+    var userInput = $("input#user-text").val()
+    var userInputArray = userInput.split("")
+
+    //checks if input is number
+    userInputArray.forEach(function(userInput){
+      if(letters.includes(userInput)){
+          console.log("is letters");    
+      }
+      else{
+          $('#output').append("<p>please do not enter a number</p>");    
+      }
+    });
+    
+    if ((userInput.length >= 1) && (vowels.includes(userInput[0]))) {
+    console.log('first letter is vowel',userInput);
+    
+      var result = userInput + "way";
+      console.log('VOWL what is result noW:', result)
+
+  
+    }
+    else if((userInput.length >= 1) && (consonants.includes(userInput[0]))){
+      // result.concat(userInput)
+
+      for (var i = 0; consonants.includes(userInput.charAt(i)); i ++) {
+        var firstLetter= userInput.charAt(0);
+        firstLetter.remove();
+        userInput = userInput + firstLetter;
+      }
+
+      var result = userInput +  +"ay";
+      console.log('CONS what is result noW:', result)
+
+    }
+    else {
+        // console.log("not single vowel");  
+    }
+    // console.log(result);
+    $('#output').text(result);
+    console.log('tada!:', result)
       
   })
 })
